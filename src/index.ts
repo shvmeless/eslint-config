@@ -1,4 +1,5 @@
 // IMPORTS
+import { generateStandardTSConfig } from './configs/standard-ts'
 import { generateStandardConfig } from './configs/standard'
 import { writeConfig } from './utils/file-writing'
 import { existsSync, mkdirSync, rmSync } from 'fs'
@@ -14,3 +15,6 @@ mkdirSync(tempPath)
 
 const standard = generateStandardConfig()
 writeConfig(standard, 'standard')
+
+const standardTS = generateStandardTSConfig()
+writeConfig(standardTS, 'standard-ts')

@@ -16,7 +16,8 @@
   ],
   "main": "./dist/standard.js",
   "exports": {
-    "./standard": "./dist/standard.js"
+    "./standard": "./dist/standard.js",
+    "./standard-ts": "./dist/standard-ts.js"
   },
   "publishConfig": {
     "access": "public"
