@@ -1,7 +1,7 @@
 {
-  "name": "@shvmeless/eslint-config",
+  "name": "@shvmerc/eslint-config",
   "description": "This package provides custom `eslint` configurations for javascript and typescript.",
-  "version": "0.0.1",
+  "version": "0.1.0-alpha",
   "license": "MIT",
   "author": {
     "name": "Luciano Aedo Puga",
@@ -22,10 +22,20 @@
   "publishConfig": {
     "access": "public"
   },
+  "keywords": [
+    "eslint",
+    "eslint config",
+    "linter",
+    "style",
+    "standard",
+    "javascript",
+    "typescript"
+  ],
   "scripts": {
     "lint": "eslint ./src --ext .ts",
     "build": "ts-node ./src/index.ts",
-    "pack": "npm pack"
+    "pack": "npm pack",
+    "publish": "npm run lint && rm -rf ./dist && npm run build && npm publish"
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "1.7.0",
