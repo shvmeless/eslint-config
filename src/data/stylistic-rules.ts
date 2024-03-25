@@ -1,4 +1,4 @@
-/* eslint quote-props: ["error", "always"] */
+/* eslint @stylistic/quote-props: ["error", "always"] */
 
 // RULES
 export const STYLISTIC_RULES: Record<string, string> = {
@@ -93,5 +93,5 @@ export const STYLISTIC_RULES: Record<string, string> = {
   'type-named-tuple-spacing': 'https://eslint.style/rules/default/type-named-tuple-spacing',
   'wrap-iife': 'https://eslint.style/rules/default/wrap-iife',
   'wrap-regex': 'https://eslint.style/rules/default/wrap-regex',
-  'yield-star-spacing': 'https://eslint.style/rules/default/yield-star-spacing'
+  'yield-star-spacing': 'https://eslint.style/rules/default/yield-star-spacing',
 }

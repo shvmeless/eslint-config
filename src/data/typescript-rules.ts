@@ -1,4 +1,4 @@
-/* eslint quote-props: ["error", "always"] */
+/* eslint @stylistic/quote-props: ["error", "always"] */
 
 // RULES
 export const TYPESCRIPT_RULES: Record<string, string> = {
@@ -120,5 +120,5 @@ export const TYPESCRIPT_RULES: Record<string, string> = {
   '@typescript-eslint/triple-slash-reference': 'https://typescript-eslint.io/rules/triple-slash-reference',
   '@typescript-eslint/typedef': 'https://typescript-eslint.io/rules/typedef',
   '@typescript-eslint/unbound-method': 'https://typescript-eslint.io/rules/unbound-method',
-  '@typescript-eslint/unified-signatures': 'https://typescript-eslint.io/rules/unified-signatures'
+  '@typescript-eslint/unified-signatures': 'https://typescript-eslint.io/rules/unified-signatures',
 }

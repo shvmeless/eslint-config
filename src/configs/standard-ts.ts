@@ -11,9 +11,10 @@ import { dictionary } from '@shvmerc/development'
 
 // FUNCTION
 export function generateStandardTSConfig (): Record<string, any> {
+
   const imports = {
     standard: importedConfigs.standard(),
-    standardTS: importedConfigs.standardTS()
+    standardTS: importedConfigs.standardTS(),
   }
 
   // CONFIG
@@ -28,7 +29,7 @@ export function generateStandardTSConfig (): Record<string, any> {
     standard: imports.standard.rules,
     standardTS: imports.standardTS.rules,
     overwritten: object({}),
-    custom: object({})
+    custom: object({}),
   }
 
   rules.standardTS = dictionary(rules.standardTS).filter((value, key) => {
@@ -48,7 +49,7 @@ export function generateStandardTSConfig (): Record<string, any> {
     '@typescript-eslint/no-unsafe-return': 'error',
     '@typescript-eslint/no-unsafe-call': 'error',
     '@typescript-eslint/no-unused-vars': ['error', { args: 'after-used', caughtErrors: 'none', ignoreRestSiblings: true, vars: 'all' }],
-    '@typescript-eslint/array-type': ['error', { default: 'generic', readonly: 'generic' }]
+    '@typescript-eslint/array-type': ['error', { default: 'generic', readonly: 'generic' }],
   }
 
   // RENAME
@@ -98,4 +99,5 @@ export function generateStandardTSConfig (): Record<string, any> {
 
   // RETURN
   return config
+
 }

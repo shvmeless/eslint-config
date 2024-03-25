@@ -1,4 +1,4 @@
-/* eslint quote-props: ["error", "always"] */
+/* eslint @stylistic/quote-props: ["error", "always"] */
 
 // RULES
 export const TYPESCRIPT_RENAMED: Record<string, string> = {
@@ -23,5 +23,5 @@ export const TYPESCRIPT_RENAMED: Record<string, string> = {
   '@typescript-eslint/space-before-blocks': '@stylistic/space-before-blocks',
   '@typescript-eslint/space-before-function-paren': '@stylistic/space-before-function-paren',
   '@typescript-eslint/space-infix-ops': '@stylistic/space-infix-ops',
-  '@typescript-eslint/type-annotation-spacing': '@stylistic/type-annotation-spacing'
+  '@typescript-eslint/type-annotation-spacing': '@stylistic/type-annotation-spacing',
 }

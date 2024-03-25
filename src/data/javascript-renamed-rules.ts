@@ -1,4 +1,4 @@
-/* eslint quote-props: ["error", "always"] */
+/* eslint @stylistic/quote-props: ["error", "always"] */
 
 // RULES
 export const JAVASCRIPT_RENAMED: Record<string, string> = {
@@ -68,5 +68,5 @@ export const JAVASCRIPT_RENAMED: Record<string, string> = {
   'template-tag-spacing': '@stylistic/template-tag-spacing',
   'wrap-iife': '@stylistic/wrap-iife',
   'wrap-regex': '@stylistic/wrap-regex',
-  'yield-star-spacing': '@stylistic/yield-star-spacing'
+  'yield-star-spacing': '@stylistic/yield-star-spacing',
 }

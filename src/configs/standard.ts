@@ -9,6 +9,7 @@ import { dictionary } from '@shvmerc/development'
 
 // FUNCTION
 export function generateStandardConfig (): Record<string, any> {
+
   const imports = { standard: importedConfigs.standard() }
 
   // CONFIG
@@ -20,14 +21,14 @@ export function generateStandardConfig (): Record<string, any> {
 
   const rules = {
     standard: imports.standard.rules,
-    custom: object({})
+    custom: object({}),
   }
 
   rules.custom = {
     'comma-dangle': ['error', 'always-multiline'],
     'arrow-parens': ['error', 'always'],
     'multiline-ternary': 'off',
-    'padded-blocks': 'off'
+    'padded-blocks': 'off',
   }
 
   // RENAME
@@ -60,4 +61,5 @@ export function generateStandardConfig (): Record<string, any> {
 
   // RETURN
   return config
+
 }

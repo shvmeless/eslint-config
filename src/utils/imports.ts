@@ -37,5 +37,5 @@ function getStandardTSConfig (): Config {
 
 export const importedConfigs = {
   standard: (): Config => (JSON.parse(JSON.stringify(getStandardConfig()))),
-  standardTS: (): Config => (JSON.parse(JSON.stringify(getStandardTSConfig())))
+  standardTS: (): Config => (JSON.parse(JSON.stringify(getStandardTSConfig()))),
 }

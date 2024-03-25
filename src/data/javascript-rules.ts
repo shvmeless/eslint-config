@@ -1,4 +1,4 @@
-/* eslint quote-props: ["error", "always"] */
+/* eslint @stylistic/quote-props: ["error", "always"] */
 
 // RULES
 export const JAVASCRIPT_RULES: Record<string, string> = {
@@ -200,5 +200,5 @@ export const JAVASCRIPT_RULES: Record<string, string> = {
   'vars-on-top': 'https://eslint.org/docs/latest/rules/vars-on-top',
   'yoda': 'https://eslint.org/docs/latest/rules/yoda',
   'line-comment-position': 'https://eslint.org/docs/latest/rules/line-comment-position',
-  'unicode-bom': 'https://eslint.org/docs/latest/rules/unicode-bom'
+  'unicode-bom': 'https://eslint.org/docs/latest/rules/unicode-bom',
 }

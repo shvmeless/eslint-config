@@ -10,6 +10,7 @@ export function object (value: unknown): Record<string, any> {
 
 // FUNCTION
 export function mergeObjects (obj1: Record<string, any>, obj2: Record<string, any>): Record<string, any> {
+
   const result: Record<string, any> = { ...obj1 }
 
   dictionary(obj2).forEach((value, key) => {
@@ -36,6 +37,7 @@ export function mergeObjects (obj1: Record<string, any>, obj2: Record<string, an
   })
 
   return result
+
 }
 
 // FUNCTION
