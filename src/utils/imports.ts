@@ -1,7 +1,7 @@
 // IMPORTS
 // @ts-expect-error No types provided for 'eslint-config-standard'
 import standardConfig from 'eslint-config-standard'
-import standardTsConfig from 'eslint-config-standard-with-typescript'
+import standardTsConfig from 'eslint-config-love'
 import { writeTemp } from './file-writing'
 import { object } from './common'
 
