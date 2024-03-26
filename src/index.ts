@@ -1,4 +1,5 @@
 // IMPORTS
+import { generateStandardJSXConfig } from './configs/standard-jsx'
 import { generateStandardTSConfig } from './configs/standard-ts'
 import { writeConfig, writeTemp } from './utils/file-writing'
 import { generateStandardConfig } from './configs/standard'
@@ -10,10 +11,6 @@ import { join } from 'path'
 const distPath = join(__dirname, '..', 'dist')
 if (existsSync(distPath)) rmSync(distPath, { recursive: true })
 mkdirSync(distPath)
-
-const tempPath = join(__dirname, '..', 'temp')
-if (existsSync(tempPath)) rmSync(tempPath, { recursive: true })
-mkdirSync(tempPath)
 
 // STANDARD
 
@@ -28,7 +25,7 @@ writeConfig({
   rules: standard.rules,
 }, 'standard')
 
-// STANDARD-TS
+// STANDARD TS
 
 const standardTS = generateStandardTSConfig()
 
@@ -40,3 +37,16 @@ writeConfig({
   ...standardTS.config,
   rules: standardTS.rules,
 }, 'standard-ts')
+
+// STANDARD JSX
+
+const standardJSX = generateStandardJSXConfig()
+
+writeTemp(standardJSX.config, 'standard-jsx/standard-jsx-config.json')
+writeTemp(standardJSX.imports, 'standard-jsx/standard-jsx-rules.json')
+writeTemp(standardJSX.unused, 'standard-jsx/standard-jsx-unused-rules.json')
+
+writeConfig({
+  ...standardJSX.config,
+  rules: standardJSX.rules,
+}, 'standard-jsx')

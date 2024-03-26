@@ -2,8 +2,12 @@
 // @ts-expect-error No types provided for 'eslint-config-standard'
 import standardConfig from 'eslint-config-standard'
 import standardTsConfig from 'eslint-config-love'
+// @ts-expect-error No types provided for 'eslint-config-standard'
+import reactRecommendedConfig from 'eslint-plugin-react'
 import { writeTemp } from './file-writing'
 import { object } from './common'
+import { existsSync, mkdirSync, rmSync } from 'fs'
+import { join } from 'path'
 
 // INTERFACE
 interface Config {
@@ -35,12 +39,30 @@ function getStandardTSConfig (): Config {
   return { config, rules }
 }
 
+// FUNCTION
+function getReactRecommendedConfig (): Config {
+  const config = object(reactRecommendedConfig.configs.recommended)
+  const rules = object(config.rules)
+  delete config.rules
+
+  writeTemp(config, 'imports/react-recommended-config.json')
+  writeTemp(rules, 'imports/react-recommended-rules.json')
+
+  return { config, rules }
+}
+
+const tempPath = join(__dirname, '..', '..', 'temp')
+if (existsSync(tempPath)) rmSync(tempPath, { recursive: true })
+mkdirSync(tempPath)
+
 // CONFIGS
 const standard = getStandardConfig()
 const standardTS = getStandardTSConfig()
+const reactRecommended = getReactRecommendedConfig()
 
 // EXPORTS
 export const importedConfigs = {
   standard: (): Config => (JSON.parse(JSON.stringify(standard))),
   standardTS: (): Config => (JSON.parse(JSON.stringify(standardTS))),
+  reactRecommended: (): Config => (JSON.parse(JSON.stringify(reactRecommended))),
 }
