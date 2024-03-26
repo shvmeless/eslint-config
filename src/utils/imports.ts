@@ -35,7 +35,12 @@ function getStandardTSConfig (): Config {
   return { config, rules }
 }
 
+// CONFIGS
+const standard = getStandardConfig()
+const standardTS = getStandardTSConfig()
+
+// EXPORTS
 export const importedConfigs = {
-  standard: (): Config => (JSON.parse(JSON.stringify(getStandardConfig()))),
-  standardTS: (): Config => (JSON.parse(JSON.stringify(getStandardTSConfig()))),
+  standard: (): Config => (JSON.parse(JSON.stringify(standard))),
+  standardTS: (): Config => (JSON.parse(JSON.stringify(standardTS))),
 }
