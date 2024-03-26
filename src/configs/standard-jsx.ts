@@ -1,9 +1,9 @@
 // IMPORTS
+import { findUnusedRules, mergeObjects, object } from '../utils/common'
 import { JAVASCRIPT_RENAMED } from '../data/javascript-renamed-rules'
 import { JAVASCRIPT_RULES } from '../data/javascript-rules'
 import { REACT_RENAMED } from '../data/react-renamed-rules'
 import { STYLISTIC_RULES } from '../data/stylistic-rules'
-import { findUnusedRules, object } from '../utils/common'
 import { importedConfigs } from '../utils/imports'
 import { REACT_RULES } from '../data/react-rules'
 import { dictionary } from '@shvmerc/development'
@@ -31,7 +31,7 @@ export function generateStandardJSXConfig (): {
 
   // CONFIG
 
-  const config = dictionary(standard.config).merge(react.config)
+  const config = mergeObjects(standard.config, react.config)
   config.plugins.push('@stylistic')
 
   // RULES

@@ -7,9 +7,11 @@ import { JAVASCRIPT_RULES } from '../data/javascript-rules'
 import { STYLISTIC_RULES } from '../data/stylistic-rules'
 import { importedConfigs } from '../utils/imports'
 import { dictionary } from '@shvmerc/development'
+import { REACT_RENAMED } from '../data/react-renamed-rules'
+import { REACT_RULES } from '../data/react-rules'
 
 // FUNCTION
-export function generateStandardTSConfig (): {
+export function generateStandardTSXConfig (): {
   config: Record<string, any>
   rules: Record<string, any>
   imports: {
@@ -42,6 +44,7 @@ export function generateStandardTSConfig (): {
   const imports = {
     standard: standard.rules,
     standardTS: standardTS.rules,
+    react: react.rules,
     custom: object({
       'comma-dangle': ['error', 'always-multiline'],
       'arrow-parens': ['error', 'always'],
@@ -62,6 +65,29 @@ export function generateStandardTSConfig (): {
         default: 'generic',
         readonly: 'generic',
       }],
+      'react/jsx-closing-bracket-location': ['error', 'line-aligned'],
+      'react/jsx-curly-brace-presence': ['error', {
+        props: 'never',
+        children: 'always',
+        propElementValues: 'always',
+      }],
+      'react/jsx-curly-spacing': ['error', 'never'],
+      'react/jsx-equals-spacing': ['error', 'never'],
+      'react/jsx-indent': ['error', 2],
+      'react/jsx-indent-props': ['error', 2],
+      'react/jsx-props-no-multi-spaces': 'error',
+      'react/jsx-quotes': ['error', 'prefer-single'],
+      'react/jsx-self-closing-comp': ['error', {
+        component: true,
+        html: true,
+      }],
+      'react/jsx-tag-spacing': ['error', {
+        closingSlash: 'never',
+        beforeSelfClosing: 'never',
+        afterOpening: 'never',
+        beforeClosing: 'never',
+      }],
+      'react/react-in-jsx-scope': 'off',
     }),
   }
 
@@ -85,6 +111,12 @@ export function generateStandardTSConfig (): {
     return key
   })
 
+  imports.react = dictionary(imports.react).rename((value, key) => {
+    const item = REACT_RENAMED[key]
+    if (item !== undefined) return item
+    return key
+  })
+
   imports.custom = dictionary(imports.custom).rename((value, key) => {
     const item = JAVASCRIPT_RENAMED[key]
     if (item !== undefined) return item
@@ -97,12 +129,19 @@ export function generateStandardTSConfig (): {
     return key
   })
 
+  imports.custom = dictionary(imports.custom).rename((value, key) => {
+    const item = REACT_RENAMED[key]
+    if (item !== undefined) return item
+    return key
+  })
+
   // RETURN
 
-  const rules = dictionary(imports.standard).merge(imports.standardTS, imports.custom)
+  const rules = dictionary(imports.standard).merge(imports.standardTS, imports.react, imports.custom)
   const unused = {
     javascript: findUnusedRules(rules, JAVASCRIPT_RULES),
     typescript: findUnusedRules(rules, TYPESCRIPT_RULES),
+    react: findUnusedRules(rules, REACT_RULES),
     stylistic: findUnusedRules(rules, STYLISTIC_RULES),
   }
 

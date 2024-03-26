@@ -18,7 +18,8 @@
   "exports": {
     "./standard": "./dist/standard.js",
     "./standard-ts": "./dist/standard-ts.js",
-    "./standard-jsx": "./dist/standard-jsx.js"
+    "./standard-jsx": "./dist/standard-jsx.js",
+    "./standard-tsx": "./dist/standard-tsx.js"
   },
   "publishConfig": {
     "access": "public"

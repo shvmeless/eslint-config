@@ -5,6 +5,7 @@ import { writeConfig, writeTemp } from './utils/file-writing'
 import { generateStandardConfig } from './configs/standard'
 import { existsSync, mkdirSync, rmSync } from 'fs'
 import { join } from 'path'
+import { generateStandardTSXConfig } from './configs/standard-tsx'
 
 // INIT
 
@@ -50,3 +51,16 @@ writeConfig({
   ...standardJSX.config,
   rules: standardJSX.rules,
 }, 'standard-jsx')
+
+// STANDARD JSX
+
+const standardTSX = generateStandardTSXConfig()
+
+writeTemp(standardTSX.config, 'standard-tsx/standard-tsx-config.json')
+writeTemp(standardTSX.imports, 'standard-tsx/standard-tsx-rules.json')
+writeTemp(standardTSX.unused, 'standard-tsx/standard-tsx-unused-rules.json')
+
+writeConfig({
+  ...standardTSX.config,
+  rules: standardTSX.rules,
+}, 'standard-tsx')
