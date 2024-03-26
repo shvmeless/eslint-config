@@ -1,13 +1,17 @@
 // IMPORTS
 import { generateStandardJSXConfig } from './configs/standard-jsx'
+import { generateStandardTSXConfig } from './configs/standard-tsx'
 import { generateStandardTSConfig } from './configs/standard-ts'
 import { writeConfig, writeTemp } from './utils/file-writing'
 import { generateStandardConfig } from './configs/standard'
 import { existsSync, mkdirSync, rmSync } from 'fs'
 import { join } from 'path'
-import { generateStandardTSXConfig } from './configs/standard-tsx'
 
 // INIT
+
+const tempPath = join(__dirname, '..', '..', 'temp')
+if (existsSync(tempPath)) rmSync(tempPath, { recursive: true })
+mkdirSync(tempPath)
 
 const distPath = join(__dirname, '..', 'dist')
 if (existsSync(distPath)) rmSync(distPath, { recursive: true })
