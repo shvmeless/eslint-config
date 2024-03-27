@@ -57,23 +57,23 @@ export function generateStandardJSXConfig (): {
     'arrow-parens': ['error', 'always'],
     'multiline-ternary': 'off',
     'padded-blocks': 'off',
-    'react/jsx-closing-bracket-location': ['error', 'line-aligned'],
-    'react/jsx-curly-brace-presence': ['error', {
+    'jsx-quotes': ['error', 'prefer-single'],
+    '@stylistic/jsx-closing-bracket-location': ['error', 'line-aligned'],
+    '@stylistic/jsx-curly-brace-presence': ['error', {
       props: 'never',
       children: 'always',
       propElementValues: 'always',
     }],
-    'react/jsx-curly-spacing': ['error', 'never'],
-    'react/jsx-equals-spacing': ['error', 'never'],
-    'react/jsx-indent': ['error', 2],
-    'react/jsx-indent-props': ['error', 2],
-    'react/jsx-props-no-multi-spaces': 'error',
-    'react/jsx-quotes': ['error', 'prefer-single'],
-    'react/jsx-self-closing-comp': ['error', {
+    '@stylistic/jsx-curly-spacing': ['error', 'never'],
+    '@stylistic/jsx-equals-spacing': ['error', 'never'],
+    '@stylistic/jsx-indent': ['error', 2],
+    '@stylistic/jsx-indent-props': ['error', 2],
+    '@stylistic/jsx-props-no-multi-spaces': 'error',
+    '@stylistic/jsx-self-closing-comp': ['error', {
       component: true,
       html: true,
     }],
-    'react/jsx-tag-spacing': ['error', {
+    '@stylistic/jsx-tag-spacing': ['error', {
       closingSlash: 'never',
       beforeSelfClosing: 'never',
       afterOpening: 'never',
