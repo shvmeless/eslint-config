@@ -1,7 +1,7 @@
 {
   "name": "@shvmerc/eslint-config",
   "description": "This package provides custom `eslint` configurations for javascript and typescript.",
-  "version": "0.2.0-alpha",
+  "version": "0.2.1-alpha",
   "license": "MIT",
   "author": {
     "name": "Luciano Aedo Puga",
